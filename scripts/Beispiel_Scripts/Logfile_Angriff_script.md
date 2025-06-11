@@ -5,38 +5,42 @@ Dieses Bash-Skript analysiert ein Authentifizierungs-Logfile (z. B. `/var/log/
 
 ---
 
-## Bash-Skript inkl. Email-Versendung
+## Bash-Skript inkl. Email-Versendung, Ordner erstellung, Zeitstempeln etc.
 
 ```bash
 #!/bin/bash
 
-# Datei, in die die erkannten Angriffe gespeichert werden
-output_datei="Angriff"
+basisordner="$HOME/Brute-Force_Angriff"
 
-# Log-Datei, die überwacht wird (z. B. SSH-Log)
-log_datei="/var/log/auth.log"
+if [ ! -d "$basisordner"]; then
+	mkdir -p "$basisordner"
+	echo "[$(date)] Hauptverzeichnis '$basisordner' wurde neu erstellt" | tee -a "$HOME/brute_force_init.log"
+fi 
 
-# Prüfen, ob die Log-Datei existiert
-if [ ! -f "$log_datei" ]; then
-    echo "Logdatei $log_datei nicht gefunden!"
-    exit 1
+zeitstempel=$(date "+&Y-%m-%d-%H-%M")
+durchlaufordner="$basisordner/$zeitstempel"
+
+log_datei="/car/log/auth.log"
+output_datei="$durchlaufordner/Angriff"
+zip_datei="$durchlaufordner/Angriff_${zeitstempel}.zip"
+empfaenger="fortnite.gaming@gmx.de"
+
+mkdir -p "$durchlaufordner"
+
+if [-f "$log_datei"]; then
+	echo "Logdatei $log_datei nicht gefunden!"
+	exit 1
 fi
 
-# Fehlversuche filtern (Beispiel: SSH Login)
-echo "Suche nach möglichen Brute-Force-Attacken..."
+echo "Suche nach Möglichen Attacken wird fortgeführt"
 grep "Failed password" "$log_datei" > "$output_datei"
 
-# Zeige die Anzahl gefundener Einträge
-anzahl=$(wc -l < "$output_datei")
-echo "$anzahl verdächtige Einträge wurden in der Datei '$output_datei' gespeichert."
+anzahl$(wc -1 < "$output_date")
+echo ""$anzahl verdächtiger Einträge gespeichert unter '$output_datei'."
 
-# In ZIP-Archiv packen
-zip "$zip_datei" "$output_datei"
+zip -j "$zip_datei" "$output_datei"
 
-# Per E-Mail versenden (mit mailutils)
-empfaenger="deine@emailadresse.de"
-betreff="Brute-Force Logbericht"
-nachricht="Im Anhang findest du die aktuellen SSH-Angriffe (${anzahl} Einträge)."
+echo "Anzahl verdächtiger Einträge: $anzahl" | mail -s "Brute-Force Logbericht $zeitstempel" -A "$zip_datei" "empfaenger"
 
-echo "$nachricht" | mail -s "$betreff" -A "$zip_datei" "$empfaenger"
+echo "[$zeitstempel] Durchlauf abgeschlossen - $anzahl Einträge." >> "$basisordner/cronlog.txt
 
