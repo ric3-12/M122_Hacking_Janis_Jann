@@ -11,7 +11,7 @@ Dieses Projekt simuliert einen automatisierten Angreifer, der eine absichtlich v
 - Entscheidungslogik → Auswahl passender Angriffsmethode
 - Angriff → Brute-Force, Exploit oder Payload
   - Wird gelogt
-- Erfolg → Punktevergabe + Flag-Erfassung + Report
+- Erfolg → Flag-Erfassung + Report
   - Wird gelogt
 - Misserfolg → Nächster Angriffsweg
    - Wird gelogt
