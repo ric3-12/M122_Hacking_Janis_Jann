@@ -1,11 +1,11 @@
 
-# Brute-Force Angriffserkennung per Bash
+# Brute-Force Angriffserkennung per Bash (Es handelt sich hier nur um ein Beispiel-Script)
 
 Dieses Bash-Skript analysiert ein Authentifizierungs-Logfile (z. B. `/var/log/auth.log`) und filtert verdächtige Login-Versuche heraus – speziell fehlgeschlagene SSH-Passwortversuche. Diese werden in einer Datei namens `Angriff` gespeichert.
 
 ---
 
-## Bash-Skript
+## Bash-Skript inkl. Email-Versendung
 
 ```bash
 #!/bin/bash
@@ -29,3 +29,14 @@ grep "Failed password" "$log_datei" > "$output_datei"
 # Zeige die Anzahl gefundener Einträge
 anzahl=$(wc -l < "$output_datei")
 echo "$anzahl verdächtige Einträge wurden in der Datei '$output_datei' gespeichert."
+
+# In ZIP-Archiv packen
+zip "$zip_datei" "$output_datei"
+
+# Per E-Mail versenden (mit mailutils)
+empfaenger="deine@emailadresse.de"
+betreff="Brute-Force Logbericht"
+nachricht="Im Anhang findest du die aktuellen SSH-Angriffe (${anzahl} Einträge)."
+
+echo "$nachricht" | mail -s "$betreff" -A "$zip_datei" "$empfaenger"
+
