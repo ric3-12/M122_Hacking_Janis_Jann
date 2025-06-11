@@ -32,5 +32,15 @@ Hydra unterstützt eine Vielzahl von Protokollen, z. B.:
 
 ## 🛠️ Beispielnutzung
 
-```bash
-hydra -l admin -P passwortliste.txt ftp://192.168.1.10
+**bash**
+
+`hydra -l admin -P passwortliste.txt ftp://192.168.1.10`
+
+--- 
+
+## ⚠️ Rechtlicher Hinweis (Sehr wichtig)
+
+Die Nutzung von Hydra ohne **ausdrückliche Erlaubnis** des Zielsystems ist **illegal** und kann strafrechtlich verfolgt werden.
+Nur in **autorisierten Testumgebungen** einsetzen.
+
+
