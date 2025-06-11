@@ -1,5 +1,5 @@
 
-# Brute-Force Angriffserkennung per Bash (Es handelt sich hier nur um ein Beispiel-Script)
+# Brute-Force Angriffserkennung per Bash 
 
 Dieses Bash-Skript analysiert ein Authentifizierungs-Logfile (z. B. `/var/log/auth.log`) und filtert verdächtige Login-Versuche heraus – speziell fehlgeschlagene SSH-Passwortversuche. Diese werden in einer Datei namens `Angriff` gespeichert.
 
