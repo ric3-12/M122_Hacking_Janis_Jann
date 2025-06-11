@@ -1,6 +1,6 @@
 # M122 Projekt Hacking eines VM
 
-***README / Zusammenfassung für Abgabe**
+**README / Zusammenfassung für Abgabe**
 
 ### Beschreibung:
 
@@ -10,8 +10,11 @@ Dieses Projekt simuliert einen automatisierten Angreifer, der eine absichtlich v
 - Recon → Scan der Ziel-VM
 - Entscheidungslogik → Auswahl passender Angriffsmethode
 - Angriff → Brute-Force, Exploit oder Payload
+  - Wird gelogt
 - Erfolg → Punktevergabe + Flag-Erfassung + Report
+  - Wird gelogt
 - Misserfolg → Nächster Angriffsweg
+   - Wird gelogt
 
 ### Technik:
 - Linux-Server (Kali/Ubuntu)
@@ -19,5 +22,3 @@ Dieses Projekt simuliert einen automatisierten Angreifer, der eine absichtlich v
 - Metasploit, Hydra, nmap, etc.
 - Zielsystem: Schwach konfiguriert (z. B. Metasploitable 2)
 - Automatisierbar via CronJob
-
- 
