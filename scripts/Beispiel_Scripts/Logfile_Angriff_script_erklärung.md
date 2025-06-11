@@ -1,63 +1,51 @@
-# Erklärung: Bash-Skript zur Erkennung von Brute-Force-Angriffen
 
-Dieses Bash-Skript analysiert eine System-Logdatei (z. B. /var/log/auth.log) und erkennt mögliche Brute-Force-Angriffe, indem es fehlgeschlagene SSH-Anmeldeversuche filtert. Die Ergebnisse werden in einer Datei namens "Angriff" gespeichert.
+# 🔐 Zusammenfassung – Brute-Force-Erkennung & E-Mail-Versand (Bash)
 
----
-
-## 🧠 Aufbau und Erklärung der Komponenten
-
-### Interpreter-Zeile
-
-Der sogenannte Shebang legt fest, dass das Skript mit dem Bash-Interpreter ausgeführt werden soll.
+Dieses Skript erkennt Brute-Force-Angriffe (z. B. fehlgeschlagene SSH-Logins) aus dem Systemlog `/var/log/auth.log`, speichert die Ergebnisse in einer strukturierten Ordnerhierarchie und versendet die Daten regelmäßig per E-Mail.
 
 ---
 
-### 1. Ausgabe-Datei definieren
+## ✅ Funktionen
 
-Die Variable "output_datei" enthält den Namen der Datei, in der die Angriffsversuche gespeichert werden.
-
----
-
-### 2. Eingabe-Logdatei definieren
-
-Hier wird die Logdatei festgelegt, aus der Daten gelesen werden. Typischerweise ist dies unter Linux die Datei, in der SSH-Anmeldeversuche protokolliert werden.
-
----
-
-### 3. Existenzprüfung der Logdatei
-
-Das Skript prüft, ob die Logdatei existiert. Falls nicht, wird eine Fehlermeldung ausgegeben und das Skript abgebrochen.
+- Erstellt automatisch ein Hauptverzeichnis `Brute-Force_Angriff` im Home-Verzeichnis.
+- Bei jedem Durchlauf wird ein Unterordner mit Zeitstempel erstellt, z. B. `Brute-Force_Angriff/2025-06-11_14-00`.
+- Sucht in der Logdatei nach Zeilen mit `Failed password` (SSH-Brute-Force-Indikator).
+- Speichert gefundene Einträge in einer Datei `Angriff`.
+- Erstellt ein ZIP-Archiv der Datei (`Angriff_YYYY-MM-DD_HH-MM.zip`).
+- Versendet das Archiv per E-Mail an eine angegebene Adresse.
+- Protokolliert jeden Durchlauf in einer Logdatei `cronlog.txt`.
+- Beim ersten Ausführen wird festgehalten, dass das Hauptverzeichnis erstellt wurde (in `brute_force_init.log`).
 
 ---
 
-### 4. Suchen nach fehlgeschlagenen Logins
+## 🔁 Automatisierung
 
-Das Skript filtert alle Zeilen aus dem Logfile, die fehlgeschlagene Anmeldeversuche (z. B. über SSH) anzeigen. Diese Zeilen gelten als Hinweise auf Brute-Force-Angriffe.
+Die Ausführung kann über `cron` erfolgen, z. B. alle 2 Stunden:
 
----
-
-### 5. Speichern der Ergebnisse
-
-Die gefilterten Zeilen werden in die Datei "Angriff" geschrieben. Bestehende Inhalte werden dabei überschrieben.
+```
+0 */2 * * * /bin/bash /pfad/zum/skript.sh
+```
 
 ---
 
-### 6. Zählen der gefundenen Angriffe
+## 📦 Voraussetzungen
 
-Am Ende wird ermittelt, wie viele Zeilen (also potenzielle Angriffe) in der Datei gespeichert wurden. Diese Anzahl wird am Schluss als Information ausgegeben.
-
----
-
-## 📝 Beispielhafte Ausgabe
-
-In der Datei "Angriff" könnten z. B. folgende Zeilen stehen:
-
-Jun 11 12:34:56 server sshd[1234]: Failed password for root from 192.168.1.100 port 56789 ssh2  
-Jun 11 12:35:01 server sshd[1234]: Failed password for invalid user admin from 192.168.1.101 port 56788 ssh2
+- Installierte Pakete: `zip`, `mailutils`
+- Zugriff auf `/var/log/auth.log` (meist nur mit `sudo`)
+- Konfigurierter Mailversand (z. B. über `mail`, `sendmail`, `msmtp` oder Relay)
 
 ---
 
-## ⚠️ Sicherheitshinweis
+## 📂 Beispielhafte Verzeichnisstruktur
 
-Dieses Skript stellt nur eine einfache Erkennung dar. Für echte Sicherheit empfiehlt es sich, automatisierte Tools wie fail2ban oder Firewalls mit Login-Rate-Limiting zu verwenden.
-
+```
+Brute-Force_Angriff/
+├── 2025-06-11_12-00/
+│   ├── Angriff
+│   └── Angriff_2025-06-11_12-00.zip
+├── 2025-06-11_14-00/
+│   ├── Angriff
+│   └── Angriff_2025-06-11_14-00.zip
+├── cronlog.txt
+└── ~/brute_force_init.log
+```
