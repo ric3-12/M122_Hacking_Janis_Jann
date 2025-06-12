@@ -34,16 +34,5 @@
 - **Nur in einer isolierten Testumgebung verwenden**, z. B. in einer virtuellen Maschine ohne Internetzugang.
 - **Nicht im produktiven Netzwerk oder öffentlich einsetzen**, da das System absichtlich viele Sicherheitslücken enthält.
 
----
-
-## ✅ Fazit
-
-Metasploitable ist eine kostenlose, leicht nutzbare Trainingsplattform für:
-
-- **Ethical Hacking**
-- **IT-Security-Schulungen**
-- **Tool-Tests und Schwachstellenanalyse**
-
-Es handelt sich um ein „Hacking-Opfer“ zum sicheren Üben.
 
 
