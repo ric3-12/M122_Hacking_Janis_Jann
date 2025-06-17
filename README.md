@@ -22,3 +22,18 @@ Dieses Projekt simuliert einen automatisierten Angreifer, der eine absichtlich v
 - Metasploit, Hydra, nmap, etc.
 - Zielsystem: Schwach konfiguriert (z. B. Metasploitable 2)
 - Automatisierbar via CronJob
+
+### Muss-Features (Produktiver Ablauf der Sicherheitssimulation)
+
+- Hack The Box-artige Simulation, Angriffe durch Scripts und Auswertung durch Bash-Scripts der Angriffe mit Benachrichtigung
+- Alles auf VMs: Angreifer-VM, Server-VM
+
+### Tests
+
+- Erfolgreiche Angriffe mit Logs
+- Script Testing
+
+### Wunsch-Features (Varianten, Kreativität)
+
+- Punktesystem, um das beste und effizienteste Script zu finden
+- UI-Übersicht
