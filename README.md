@@ -16,7 +16,7 @@ Dieses Projekt simuliert einen automatisierten Angreifer, der eine absichtlich v
 - Misserfolg → Nächster Angriffsweg
    - Wird gelogt
 
-[Screenshot](../Media/)
+[Screenshot](../Media/Bild_1.jpg)
 
 ### Technik:
 - Linux-Server (Kali/Ubuntu)
