@@ -1,4 +1,4 @@
-# M122 Projekt Hacking eines VM
+# M122 Projekt Hacking einer VM
 
 **README / Zusammenfassung für Abgabe**
 
