@@ -34,8 +34,3 @@ Dieses Projekt simuliert einen automatisierten Angreifer, der eine absichtlich v
 
 - Erfolgreiche Angriffe mit Logs
 - Script Testing
-
-### Wunsch-Features (Varianten, Kreativität)
-
-- Punktesystem, um das beste und effizienteste Script zu finden
-- UI-Übersicht
