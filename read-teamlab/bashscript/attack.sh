@@ -13,7 +13,7 @@ TARGET_HOST="ssh-target"
 WORDLIST="/usr/share/wordlists/rockyou.txt"
 
 # ---------------
-# Log-Funktion
+# Log-Funktion 
 # ---------------
 log() {
     local msg="$1"
