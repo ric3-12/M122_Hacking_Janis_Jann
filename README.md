@@ -4,14 +4,14 @@
 
 ### Beschreibung:
 
-Dieses Projekt simuliert einen automatisierten Angreifer, der eine absichtlich verwundbare Ziel-VM angreift. Die Engine nutzt klassische Pentesting-Tools (nmap, hydra, metasploit) und entscheidet selbstständig, welche Angriffstechnik als Nächstes eingesetzt wird. Bei Erfolg wird ein Report erstellt, Payloads archiviert und eine Admin-Benachrichtigung ausgelöst.
+Dieses Projekt simuliert einen automatisierten Angreifer, der eine absichtlich verwundbare Ziel-VM Aufgesetzt in einem Docker Container angreift. Die Simulation nutzt klassische Pentesting-Tools (nmap, hydra, metasploit) und entscheidet selbstständig, welche Angriffstechnik als Nächstes eingesetzt wird. Bei Erfolg wird ein Report erstellt, Payloads archiviert und eine Admin-Benachrichtigung ausgelöst.
 
 ### Ablauf der Simulation:
 - Recon → Scan der Ziel-VM
 - Entscheidungslogik → Auswahl passender Angriffsmethode
 - Angriff → Brute-Force, Exploit oder Payload
   - Wird gelogt
-- Erfolg → Flag-Erfassung + Report
+- Erfolg →  Report
   - Wird gelogt
 - Misserfolg → Nächster Angriffsweg
    - Wird gelogt
@@ -32,5 +32,5 @@ Dieses Projekt simuliert einen automatisierten Angreifer, der eine absichtlich v
 
 ### Tests
 
-- Erfolgreiche Angriffe mit Logs
+- Stand 24.06.2025 Angriffe funktionieren ansatzweise kommen teils durch. jedoch gibt es fehler und errors da die Scripte noch sehr low Budget sind. 
 - Script Testing
