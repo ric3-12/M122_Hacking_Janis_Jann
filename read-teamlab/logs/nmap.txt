@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Tue Jun 24 16:21:12 2025 as: /usr/lib/nmap/nmap -sV -p 22,80,443 -oN /logs/nmap.txt ssh-target
+Failed to resolve "ssh-target".
+WARNING: No targets were specified, so 0 hosts scanned.
+# Nmap done at Tue Jun 24 16:21:18 2025 -- 0 IP addresses (0 hosts up) scanned in 6.24 seconds
