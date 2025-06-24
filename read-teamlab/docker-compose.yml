@@ -1,0 +1,24 @@
+services:
+  target:
+    image: vulnerables/web-dvwa
+    container_name: dvwa
+    ports:
+      - "8080:80"
+    networks:
+      - lab_net
+    environment:
+      - MYSQL_PASSOWRD=password
+
+  attacker:
+    build: ./attacker
+    container_name: red-attacker
+    volumes:
+      - ./logs:/logs
+    depends_on:
+      - target
+    networks:
+      - lab_net
+
+networks:
+  lab_net:
+    driver: bridge
