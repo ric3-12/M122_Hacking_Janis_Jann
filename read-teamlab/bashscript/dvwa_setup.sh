@@ -7,7 +7,7 @@ until curl -s --head "http://target:80/setup.php" | grep -q "200 OK"; do
     sleep 5
 done
 
-# Run DVWA setup
+# Run DVWA setup 
 curl -s -X POST "http://target:80/setup.php" \
     -d "create_db=Create+%2F+Reset+Database" \
     -H "Content-Type: application/x-www-form-urlencoded"
