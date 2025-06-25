@@ -118,9 +118,4 @@ log "[+] Angriff abgeschlossen: $(date '+%Y-%m-%d %H:%M:%S')"
 
 Gibt abschließende Erfolgsmeldung mit Zeitstempel aus.
 
----
-
-## ⚠️ Hinweis zur Legalität
-
-Dieses Skript darf **nur in einer kontrollierten Testumgebung** eingesetzt werden. Angriffe auf reale Systeme ohne ausdrückliche Zustimmung sind **strafbar**.
 
