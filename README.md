@@ -32,5 +32,8 @@ Dieses Projekt simuliert einen automatisierten Angreifer, der eine absichtlich v
 
 ### Tests
 
-- Stand 24.06.2025 Angriffe funktionieren ansatzweise kommen teils durch. Jedoch gibt es leider fehler und errors da die Scripte noch sehr low Budget sind. 
+- Stand 24.06.2025 Angriffe funktionieren ansatzweise kommen teils durch. Jedoch gibt es leider fehler und errors da die Scripte noch sehr low Budget sind.
+
+ ![Screenshot](/Media/Lofile_1.0.png)
+  
 - Script Testing
