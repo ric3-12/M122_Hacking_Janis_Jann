@@ -1,0 +1,13 @@
+[2025-07-01 14:10:52] === Angriffsübersicht ===
+[2025-07-01 14:10:52] Generiert am: 2025-07-01 14:10:52
+[2025-07-01 14:10:52] --- Nmap-Scan-Ergebnisse ---
+[2025-07-01 14:10:52] Port 22/tcp: ssh OpenSSH 9.2p1 Debian 2+deb12u6 (protocol 2.0)
+[2025-07-01 14:10:52] Port 80/tcp: http Apache httpd 2.4.62 ((Debian))
+[2025-07-01 14:10:53] Port 443/tcp: ssl/http Apache httpd 2.4.62
+[2025-07-01 14:10:53] --- Hydra-Bruteforce-Ergebnisse ---
+[2025-07-01 14:10:53] Erfolgreicher Login: Benutzer: admin, Passwort: password
+[2025-07-01 14:10:53] --- Angriffsdetails ---
+[2025-07-01 14:10:53] Startzeit: [2025-07-01 12:05:27]
+[2025-07-01 14:10:53] Endzeit: [2025-07-01 12:05:44]
+[2025-07-01 14:10:53] Dauer: (berechne manuell anhand Start/Endzeit)
+[2025-07-01 14:10:53] === Analyse abgeschlossen ===

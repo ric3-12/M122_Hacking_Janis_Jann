@@ -1,4 +1,14 @@
-# Nmap 7.95 scan initiated Tue Jun 24 16:21:12 2025 as: /usr/lib/nmap/nmap -sV -p 22,80,443 -oN /logs/nmap.txt ssh-target
-Failed to resolve "ssh-target".
-WARNING: No targets were specified, so 0 hosts scanned.
-# Nmap done at Tue Jun 24 16:21:18 2025 -- 0 IP addresses (0 hosts up) scanned in 6.24 seconds
+# Nmap 7.95 scan initiated Tue Jul  1 12:05:27 2025 as: /usr/lib/nmap/nmap -sV -p 22,80,443 -oN /logs/nmap.txt ssh-target
+Nmap scan report for ssh-target (172.22.0.2)
+Host is up (0.000079s latency).
+rDNS record for 172.22.0.2: ssh-target.redteam-lab_lab_net
+
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 9.2p1 Debian 2+deb12u6 (protocol 2.0)
+80/tcp  open  http     Apache httpd 2.4.62 ((Debian))
+443/tcp open  ssl/http Apache httpd 2.4.62
+MAC Address: 56:CE:C5:C5:86:0D (Unknown)
+Service Info: Host: 172.22.0.2; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Jul  1 12:05:40 2025 -- 1 IP address (1 host up) scanned in 13.23 seconds
