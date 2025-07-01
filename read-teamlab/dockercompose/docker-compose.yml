@@ -5,9 +5,9 @@ services:
       dockerfile: Dockerfile.target
     container_name: ssh-target
     ports:
-      - "2222:22"  # SSH
-      - "8080:80"  # HTTP
-      - "8443:443" # HTTPS
+      - "2222:22"    # SSH
+      - "8080:80"    # HTTP
+      - "8443:443"   # HTTPS
     networks:
       - lab_net
 
@@ -23,6 +23,7 @@ services:
         condition: service_started
     networks:
       - lab_net
+    command: ["/attack.sh"]
     deploy:
       resources:
         limits:

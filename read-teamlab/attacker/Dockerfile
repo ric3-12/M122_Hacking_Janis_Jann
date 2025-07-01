@@ -1,28 +1,26 @@
-FROM kalilinux/kali-rolling
+FROM kalilinux/kali-rolling:latest
 
-ENV DEBIAN_FRONTEND=noninteractive
-
+# Installiere Tools
 RUN apt update && apt install -y \
-    python3 python3-pip curl wget git \
-    hydra \
-    sqlmap \
-    nikto \
-    dirb \
     nmap \
-    john \
-    gobuster \
-    netcat-openbsd \
-    metasploit-framework \
-    nuclei \
-    seclists \
-    whois \
-    dnsutils \
-    smbclient \
-    crackmapexec \
-    python3-requests
+    hydra \
+    && apt clean
 
-RUN mkdir -p /logs
+# Erstelle Verzeichnisse für Wordlists und Logs
+RUN mkdir -p /usr/share/wordlists
+COPY rockyou.txt /usr/share/wordlists/
+RUN mkdir -p /logs && chmod 777 /logs
+
+# Kopiere und mache das Skript ausführbar
+COPY attack.sh /attack.sh
+RUN chmod +x /attack.sh
+
+# Halte den Container am Laufen (kein sofortiges Skript-Ausführen)
+CMD tail -f /dev/null
 
 COPY attack.sh /attack.sh
-
+RUN chmod +x /attack.sh
 CMD ["/attack.sh"]
+
+COPY analyze.sh /analyze.sh
+RUN chmod +x /analyze.sh

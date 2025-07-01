@@ -17,3 +17,10 @@ RUN chmod +x /attack.sh
 
 # Halte den Container am Laufen (kein sofortiges Skript-Ausführen)
 CMD tail -f /dev/null
+
+COPY attack.sh /attack.sh
+RUN chmod +x /attack.sh
+CMD ["/attack.sh"]
+
+COPY analyze.sh /analyze.sh
+RUN chmod +x /analyze.sh
