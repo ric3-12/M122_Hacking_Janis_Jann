@@ -39,4 +39,9 @@ Dieses Projekt simuliert einen automatisierten Angreifer, der eine absichtlich v
 - Stand 01.07.2025 Angriffe werden erfolgreich geloggt
 
 ![Screenshot](/Media/Attack_Log.png.png)
+
+- Dazu wird noch eine Analyse erstellt
+
+![Screenshot](/Media/Analyse.png)
+
 - Script Testing
