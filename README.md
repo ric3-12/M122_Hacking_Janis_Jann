@@ -7,13 +7,12 @@
 Dieses Projekt simuliert einen automatisierten Angreifer, der eine absichtlich verwundbare Ziel-VM Aufgesetzt in einem Docker Container angreift. Die Simulation nutzt klassische Pentesting-Tools (nmap, hydra, metasploit) und entscheidet selbstständig, welche Angriffstechnik als Nächstes eingesetzt wird. Bei Erfolg wird ein Report erstellt, Payloads archiviert und eine Admin-Benachrichtigung ausgelöst.
 
 ### Ablauf der Simulation:
-- Recon → Scan der Ziel-VM
-- Entscheidungslogik → Auswahl passender Angriffsmethode
-- Angriff → Brute-Force, Exploit oder Payload
+- Scan der VM → Mit Nmap
+- Angriff → Brute-Force
   - Wird gelogt
-- Erfolg →  Report
+- Erfolg
   - Wird gelogt
-- Misserfolg → Nächster Angriffsweg
+- Misserfolg
    - Wird gelogt
 
 ![Screenshot](/Media/Bild_1.png)
