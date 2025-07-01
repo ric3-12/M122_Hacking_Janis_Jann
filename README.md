@@ -6,14 +6,41 @@
 
 Dieses Projekt simuliert einen automatisierten Angreifer, der eine absichtlich verwundbare Ziel-VM Aufgesetzt in einem Docker Container angreift. Die Simulation nutzt klassische Pentesting-Tools (nmap, hydra, metasploit) und entscheidet selbstständig, welche Angriffstechnik als Nächstes eingesetzt wird. Bei Erfolg wird ein Report erstellt, Payloads archiviert und eine Admin-Benachrichtigung ausgelöst.
 
-### Ablauf der Simulation:
-- Scan der VM → Mit Nmap
-- Angriff → Brute-Force
-  - Wird gelogt
-- Erfolg
-  - Wird gelogt
-- Misserfolg
-   - Wird gelogt
+## Ablauf der Simulation:
+
+### 🔧 1. Container `ssh-target`
+
+- Startet **Apache mit SSL** und **OpenSSH-Server**
+- Stellt eine **Zielmaschine für Angriffe** bereit  
+  → Zugangsdaten: `admin:password`
+- **DVWA** (Damn Vulnerable Web Application) ist vorinstalliert
+
+---
+
+### 🔨 2. Container `red-attacker`
+
+- Startet automatisch das Skript `attack.sh`
+- Führt **drei Angriffsphasen** durch:
+  1. **Nmap-Scan** (Ports und Versionen)
+  2. **Hydra-Bruteforce-Angriff** auf SSH
+  3. **Passwort-Extraktion**
+- Alle Ausgaben werden gespeichert in:
+  - `logs/attack.log`
+  - `logs/nmap.txt`
+  - `logs/hydra.txt`
+
+---
+
+### 📊 3. Analyse-Skript `analyze.sh`
+
+- Wird **direkt nach dem Angriff oder manuell** ausgeführt
+- Erstellt eine **logische Zusammenfassung**:
+  - Offene Ports und Dienste
+  - Erfolgreiches Login mit Benutzername und Passwort
+  - Start- und Endzeit des Angriffs
+- Ausgabe: `logs/summary.txt` (klar und übersichtlich)
+
+
 
 ![Screenshot](/Media/Bild_1.png)
 
@@ -23,11 +50,6 @@ Dieses Projekt simuliert einen automatisierten Angreifer, der eine absichtlich v
 - Metasploit, Hydra, nmap, etc.
 - Zielsystem: Schwach konfiguriert (z. B. Metasploitable 2)
 - Automatisierbar via CronJob
-
-### Muss-Features (Produktiver Ablauf der Sicherheitssimulation)
-
-- Hack The Box-artige Simulation, Angriffe durch Scripts und Auswertung durch Bash-Scripts der Angriffe mit Benachrichtigung
-- Alles auf VMs: Angreifer-VM, Server-VM
 
 ### Tests
 
