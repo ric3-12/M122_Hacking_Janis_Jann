@@ -1,3 +1,9 @@
+# -------------------------------
+# Dockerfile
+# Erzeugt einen Container für das Read-Team-Lab
+# Dieser Container enthält einen Apache-Server mit OpenSSH und SSL
+# -------------------------------
+# Author: Jann (Janis)
 FROM php:apache
 
 # Installiere OpenSSH-Server und OpenSSL

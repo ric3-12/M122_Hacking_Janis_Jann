@@ -1,6 +1,6 @@
 # Red-Team Attack Script - Erklärung
 
-Dieses Bash-Skript simuliert einen Angriff auf einen SSH-Dienst. Es führt einen Portscan mit Nmap durch und versucht dann einen Brute-Force-Angriff mit Hydra. **Nur in Testumgebungen verwenden!**
+Dieses Bash-Skript simuliert einen Angriff auf einen SSH-Dienst. Es führt einen Portscan mit Nmap durch und versucht dann einen Brute-Force-Angriff mit Hydra.
 
 ---
 

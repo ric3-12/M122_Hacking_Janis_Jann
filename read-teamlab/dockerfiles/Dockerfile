@@ -1,3 +1,9 @@
+# -------------------------------
+# Dockerfile
+# Erzeugt einen Container für das Read-Team-Lab
+# Dieser Container enthält Tools für Angriffe und eine Wordlist
+# -------------------------------
+# Author: Jann (Janis)
 FROM kalilinux/kali-rolling:latest
 
 # Installiere Tools
