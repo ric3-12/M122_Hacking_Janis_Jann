@@ -1,3 +1,9 @@
+# -------------------------------
+# Dockercompose für das Read-Team-Lab
+# Erzeugt einen Container für das Read-Team-Lab
+# Dieser Container enthält Tools für Angriffe und eine Wordlist
+# -------------------------------
+# Author: Jann (Janis)
 services:
   target:
     build:

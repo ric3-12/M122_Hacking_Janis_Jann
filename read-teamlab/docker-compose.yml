@@ -1,3 +1,8 @@
+# -------------------------------
+# Dockercompose für das Read-Team-Lab
+# Erzeugt Container für einen Angreifer und ein Zielsystem
+# -------------------------------
+# Author: Jann (Janis)
 services:
   target:
     image: vulnerables/web-dvwa
