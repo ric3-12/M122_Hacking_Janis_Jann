@@ -6,6 +6,23 @@
 
 Dieses Projekt simuliert einen automatisierten Angreifer, der eine absichtlich verwundbare Ziel-VM Aufgesetzt in einem Docker Container angreift. Die Simulation nutzt klassische Pentesting-Tools (nmap, hydra) und durchläuft ein Script das ein portscan macht und mit hydra eine Brootforce Attacke startet. Bei Erfolg oder Misserfolg wir das in 3 unterschiedlichen Log dateien die resultate aufgezeichnet. Diese 3 dateien werden von einem Bash Script in einer Summary Datei zusammengefasst.
 
+### Selbst benutzen: 
+Klone das Repository in git bash oder Powershell mit diesen Befehl:
+```
+git Clone https://github.com/ric3-12/M122_Hacking_Janis_Jann.git
+```
+unpack das redteam-lab.7z an einen geeigneten Ort.
+Öffne den redteam-lab Ordner im docker Terminal und mache baue die container und Volumes mit 
+```
+docker compose build
+```
+Warte bis alles fertig gebaut wurde.
+Lösche aus dem log Ordner alle log Dateien und starte die Simulation mit dem Befehl
+```
+docker compose up -d
+```
+Im logg Ordner werden in kürze logs erscheinen und ein summary.txt
+
 ### Ablauf der Simulation:
 - Recon → Scan der Ziel-VM
 - Start des Scripts
