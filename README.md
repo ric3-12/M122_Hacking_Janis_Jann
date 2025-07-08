@@ -87,5 +87,3 @@ Dieses Projekt simuliert einen automatisierten Angreifer, der eine absichtlich v
 - Dazu wird noch eine Analyse erstellt
 
 ![Screenshot](/Media/Analyse.png)
-
-- Script Testing
