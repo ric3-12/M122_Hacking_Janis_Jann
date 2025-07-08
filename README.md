@@ -6,7 +6,7 @@
 
 Dieses Projekt simuliert einen automatisierten Angreifer, der eine absichtlich verwundbare Ziel-VM Aufgesetzt in einem Docker Container angreift. Die Simulation nutzt klassische Pentesting-Tools (nmap, hydra) und durchläuft ein Script das ein portscan macht und mit hydra eine Brootforce Attacke startet. Bei Erfolg oder Misserfolg wir das in 3 unterschiedlichen Log dateien die resultate aufgezeichnet. Diese 3 dateien werden von einem Bash Script in einer Summary Datei zusammengefasst.
 
-### Selbst benutzen:
+### Selbst benutzen: 
 Klone das Repository in git bash oder Powershell mit diesen Befehl:
 ```
 git Clone https://github.com/ric3-12/M122_Hacking_Janis_Jann.git
